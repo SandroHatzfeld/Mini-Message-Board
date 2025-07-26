@@ -1,7 +1,9 @@
-<% messages.forEach(message => { %>
-<li>
-  <h2><%= message.user%><a style="font-size: 0.75rem; margin-left: 20px; color: gray; text-decoration: none;" href="/message-details">Open message »</a></h2>
-  <span><%= message.text %></span>
-  <span><%= message.added.toLocaleString() %></span>
-</li>
-<%})%>
+<ul style="list-style: none;">
+	<% messages.forEach(message => { %>
+	<li>
+		<p style="font-size: 1.25rem;"><%= message.text%></p>
+		<span><%= message.user %></span><a style="font-size: 0.75rem; margin-left: 20px; color: gray; text-decoration: none;" href="/message-details">Open message »</a><br>
+		<span><%= message.added.toLocaleString() %></span>
+	</li>
+	<%})%>
+</ul>

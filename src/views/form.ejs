@@ -4,9 +4,7 @@
   </head>
   <body>
     <h1>Your Messages</h1>
-    <ul>
       <%- include ('messages', {messages: messages})%>
-    </ul>
     <h2>Add a new message:</h2>
     <form action="/new" method="POST">
       <div>
