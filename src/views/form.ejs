@@ -4,22 +4,22 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Your Messages</h1>
     <div class="messages-wrapper">
+      <h1>Your Messages</h1>
       <%- include ('messages', {messages: messages})%>
       <h2>Add a new message:</h2>
       <form action="/new" method="POST">
-        <div>
-          <label for="username"></label>
+        <div class="flex-row">
+          <label for="username">Username</label>
           <input type="text" name="username" id="username" />
         </div>
-        <div>
-          <label for="message"></label>
+        <div class="flex-row">
+          <label for="message">Message</label>
           <textarea name="message" id="message"></textarea>
         </div>
-        <div>
+        <div class="justify-items-row">
+          <a class="btn btn-abort" href="/">Abort</a>
           <input type="submit" value="Send message" />
-          <a href="/">Abort</a>
         </div>
       </form>
     </div>
