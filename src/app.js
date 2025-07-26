@@ -21,7 +21,7 @@ app.set("view engine", "ejs")
 app.get("/", (req, res) => {
 	res.render("index", {messages: messages})
 })
-app.get("/messages", messagesDetailsRouter)
+app.use("/messages", messagesDetailsRouter)
 app.get("/new", (req, res) => {
 	res.render("form", {messages: messages})
 })

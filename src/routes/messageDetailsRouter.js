@@ -5,8 +5,11 @@ const path = require('path')
 const messagesDetailsRouter = Router()
 
 messagesDetailsRouter.get("/:messageId", (req, res) => {
-	console.log(req.params);
+	const {messages} = require('../messageDB.js')
+
+	const message = messages.find(message => message.id.toString() === req.params.messageId)
 	
+	res.render("messageDetails", {message:message})
 })
 
 module.exports = messagesDetailsRouter
