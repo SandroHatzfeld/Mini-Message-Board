@@ -9,11 +9,18 @@
     </ul>
     <h2>Add a new message:</h2>
     <form action="/new" method="POST">
-      <label for="username"></label>
-      <input type="text" name="username" id="username" />
-      <label for="message"></label>
-      <textarea name="message" id="message"></textarea>
-      <input type="submit" value="Send message" />
+      <div>
+        <label for="username"></label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <label for="message"></label>
+        <textarea name="message" id="message"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Send message" />
+        <a href="/">Abort</a>
+      </div>
     </form>
   </body>
 </html>
