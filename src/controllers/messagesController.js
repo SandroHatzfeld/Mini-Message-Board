@@ -1,4 +1,5 @@
 const db = require('../messageDB.js')
+const CustomNotFoundError = require('../errors/CustomNotFoundError.js')
 
 async function getMessageById(req, res) {
 	const { messageId } = req.params
@@ -6,8 +7,7 @@ async function getMessageById(req, res) {
 	const message = await db.getMessageById(messageId)
 
 	if (!message) {
-		res.status(404).send('There is no message with the ID:' + messageId)
-		return
+		throw new CustomNotFoundError(`There is no message with the ID: ${messageId}`)
 	}
 
 	res.render("messageDetails", { message: message })
@@ -17,8 +17,7 @@ async function getAllMessages(req, res,) {
 	const messages =	await db.getAllMessages()
 
 	if (!messages) {
-		res.status(404).send('There is no message')
-		return
+		throw new CustomNotFoundError("The list of messages is empty")
 	}
 	res.render("index", { messages: messages })
 }
