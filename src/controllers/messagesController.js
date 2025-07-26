@@ -1,8 +1,8 @@
 const db = require('../messageDB.js')
 
 async function getMessageById(req, res) {
-	const { messageId } = req.params.messageId
-
+	const { messageId } = req.params
+	
 	const message = await db.getMessageById(messageId)
 
 	if (!message) {
