@@ -29,7 +29,7 @@ a, input[type="submit"] {
 
 .message-list li {
 	margin-bottom: 0.5rem;
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
 	border-radius: var(--border-radius);
 	background-color: #3355a0;
 
