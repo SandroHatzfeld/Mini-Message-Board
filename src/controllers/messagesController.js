@@ -16,6 +16,10 @@ async function getMessageById(req, res) {
 async function getAllMessages(req, res,) {
 	const messages =	await db.getAllMessages()
 
+	if (!messages) {
+		res.status(404).send('There is no message')
+		return
+	}
 	res.render("index", { messages: messages })
 }
 
