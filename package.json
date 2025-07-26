@@ -1,4 +1,9 @@
 {
+  "name": "mini-message-board",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
