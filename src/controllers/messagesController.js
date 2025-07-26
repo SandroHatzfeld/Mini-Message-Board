@@ -13,14 +13,20 @@ async function getMessageById(req, res) {
 	res.render("messageDetails", { message: message })
 }
 
-async function getAllMessages(req, res) {
+async function getAllMessages(req, res,) {
 	const messages =	await db.getAllMessages()
 
 	res.render("index", { messages: messages })
 }
 
-async function pushNewMessage(text, user) {
-	db.pushNewMessage(text, user)
+async function addNewMessage(req, res) {
+	const messages =	await db.getAllMessages()
+
+	res.render("form", { messages: messages })
+}
+async function pushNewMessage(req, res) {
+	db.pushNewMessage(req.body.message, req.body.username)
+	res.redirect("/")
 }
 
-module.exports = { getMessageById, getAllMessages, pushNewMessage }
+module.exports = { getMessageById, getAllMessages, addNewMessage, pushNewMessage }
