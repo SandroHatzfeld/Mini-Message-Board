@@ -1,10 +1,13 @@
 // Import env file, install dotenv npm package first
 require("dotenv").config()
 
+const { randomUUID } = require('crypto')
 // Import express Server
 const express = require('express')
 const app = express()
 const path = require('path')
+const messagesDetailsRouter = require('./routes/messageDetailsRouter.js')
+const {messages} = require('./messageDB.js')
 
 app.use(express.urlencoded({extended:true}))
 app.set("views",path.join(__dirname, "views"))
@@ -13,29 +16,20 @@ app.set("view engine", "ejs")
 // const indexRouter = require('./routes/indexRouter.js')
 // const newMessageRouter = require('./routes/newMessageRouter.js')
 
-const messages = [
-	{
-		text: "Hi there!",
-		user: "Amanda",
-		added: new Date()
-	},
-	{
-		text: "Hello my friend!",
-		user: "Samuel",
-		added: new Date()
-	}
-]
+
 
 app.get("/", (req, res) => {
 	res.render("index", {messages: messages})
 })
+app.get("/messages", messagesDetailsRouter)
 app.get("/new", (req, res) => {
 	res.render("form", {messages: messages})
 })
 app.post("/new", (req, res) => {
-	messages.push({text:req.body.message, user:req.body.username, added: new Date()})
+	messages.push({id: randomUUID(),text:req.body.message, user:req.body.username, added: new Date()})
 	res.redirect("/")
 })
+
 
 // app.use("/new", newMessageRouter)
 
