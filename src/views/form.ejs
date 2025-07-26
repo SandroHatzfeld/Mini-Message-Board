@@ -1,10 +1,11 @@
 <html>
   <head>
-    <title></title>
+    <title>New Message</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <h1>Your Messages</h1>
-      <%- include ('messages', {messages: messages})%>
+    <%- include ('messages', {messages: messages})%>
     <h2>Add a new message:</h2>
     <form action="/new" method="POST">
       <div>

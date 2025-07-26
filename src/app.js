@@ -12,9 +12,10 @@ const indexRouter = require('./routes/indexRouter.js')
 app.use(express.urlencoded({ extended: true }))
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")
+app.use(express.static(__dirname + '/public'))
 
 
-
+// setup routers
 app.use("/", indexRouter)
 app.use("/messages", messagesDetailsRouter)
 app.use("/new", newMessageRouter)
