@@ -5,21 +5,23 @@
   </head>
   <body>
     <h1>Your Messages</h1>
-    <%- include ('messages', {messages: messages})%>
-    <h2>Add a new message:</h2>
-    <form action="/new" method="POST">
-      <div>
-        <label for="username"></label>
-        <input type="text" name="username" id="username" />
-      </div>
-      <div>
-        <label for="message"></label>
-        <textarea name="message" id="message"></textarea>
-      </div>
-      <div>
-        <input type="submit" value="Send message" />
-        <a href="/">Abort</a>
-      </div>
-    </form>
+    <div class="messages-wrapper">
+      <%- include ('messages', {messages: messages})%>
+      <h2>Add a new message:</h2>
+      <form action="/new" method="POST">
+        <div>
+          <label for="username"></label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div>
+          <label for="message"></label>
+          <textarea name="message" id="message"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Send message" />
+          <a href="/">Abort</a>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

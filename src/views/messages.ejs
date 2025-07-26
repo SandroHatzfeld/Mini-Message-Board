@@ -1,9 +1,10 @@
-<ul style="list-style: none;">
+<ul class="message-list">
 	<% messages.forEach(message => { %>
 	<li>
 		<p style="font-size: 1.25rem;"><%= message.text%></p>
-		<span><%= message.user %></span><a style="font-size: 0.75rem; margin-left: 20px; color: gray; text-decoration: none;" href="/messages/<%=message.id %>">Open message »</a><br>
-		<span><%= message.added.toLocaleString() %></span>
+		<span><%= message.user %></span><br>
+		<span><%= message.added.toLocaleString() %></span><br>
+		<a href="/messages/<%=message.id %>">Open message »</a>
 	</li>
 	<%})%>
 </ul>

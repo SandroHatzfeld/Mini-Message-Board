@@ -5,7 +5,9 @@
   </head>
   <body>
     <h1>Your Messages</h1>
-    <%- include ('messages', {messages: messages})%>
-    <a href="/new">Add message</a>
+    <div class="messages-wrapper">
+      <%- include ('messages', {messages: messages})%>
+      <a href="/new">Add message</a>
+    </div>
   </body>
 </html>
