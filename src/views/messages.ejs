@@ -1,7 +1,7 @@
 <% messages.forEach(message => { %>
 <li>
-  <h2><%= message.user%></h2>
+  <h2><%= message.user%><a style="font-size: 0.75rem; margin-left: 20px; color: gray; text-decoration: none;" href="/message-details">Open message »</a></h2>
   <span><%= message.text %></span>
-  <span><%= message.added %></span>
+  <span><%= message.added.toLocaleString() %></span>
 </li>
 <%})%>
