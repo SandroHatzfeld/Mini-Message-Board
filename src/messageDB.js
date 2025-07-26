@@ -15,4 +15,16 @@ const messages = [
 	}
 ]
 
-module.exports = { messages}
+async function getMessageById(id) {
+	return messages.find(messages => messages.id === id) 
+}
+
+async function getAllMessages() {
+	return messages
+}
+
+async function pushNewMessage(text, user) {
+	messages.push({id: randomUUID(),text:text, user:user, added: new Date()})
+}
+
+module.exports = { getAllMessages, getMessageById, pushNewMessage }

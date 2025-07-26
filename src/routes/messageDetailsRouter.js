@@ -1,15 +1,10 @@
 const express = require('express')
 const { Router } = require('express')
 const path = require('path')
+const { getMessageById } = require('../controllers/messagesController.js')
 
 const messagesDetailsRouter = Router()
 
-messagesDetailsRouter.get("/:messageId", (req, res) => {
-	const {messages} = require('../messageDB.js')
-
-	const message = messages.find(message => message.id.toString() === req.params.messageId)
-	
-	res.render("messageDetails", {message:message})
-})
+messagesDetailsRouter.get("/:messageId", getMessageById)
 
 module.exports = messagesDetailsRouter

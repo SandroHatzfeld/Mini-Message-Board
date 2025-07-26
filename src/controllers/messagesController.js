@@ -1,0 +1,26 @@
+const db = require('../messageDB.js')
+
+async function getMessageById(req, res) {
+	const { messageId } = req.params.messageId
+
+	const message = await db.getMessageById(messageId)
+
+	if (!message) {
+		res.status(404).send('There is no message with the ID:' + messageId)
+		return
+	}
+
+	res.render("messageDetails", { message: message })
+}
+
+async function getAllMessages(req, res) {
+	const messages =	await db.getAllMessages()
+
+	res.render("index", { messages: messages })
+}
+
+async function pushNewMessage(text, user) {
+	db.pushNewMessage(text, user)
+}
+
+module.exports = { getMessageById, getAllMessages, pushNewMessage }
