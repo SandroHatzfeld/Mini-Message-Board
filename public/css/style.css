@@ -11,7 +11,7 @@ body {
 }
 
 
-a, input[type="submit"] {
+a, input[type="submit"], button {
 	color: inherit;
 }
 .messages-wrapper {
@@ -73,7 +73,7 @@ input[type="text"], textarea {
 	border-radius: var(--border-radius);
 }
 
-input[type="submit"], .btn {
+input[type="submit"], button, .btn {
 	text-decoration: none;
 	cursor: pointer;
 	font-size: 1rem;

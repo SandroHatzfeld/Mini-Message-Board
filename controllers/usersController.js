@@ -68,4 +68,9 @@ exports.usersUpdatePost = [
 	}
 ]
 
+exports.usersDeletePost = (req, res) => {
+	userStorage.deleteUser(req.params.id)
+	res.redirect("/users")
+}
+
 // module.exports = userController
