@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><%= title%></title>
-</head>
-<body>
-	<h1><%= title%></h1>
-	<ul>
-		<% if (locals.users) {%>
-			<% users.forEach(user => { %>
-			 <li>
-				ID: <%= user.id %>, Name: <%= user.firstName%> <%= user.lastName%>
-			 </li>
-			<% }) %>
-		<% } %>
-	</ul>
-	<a href="/users/create" class="btn">Create new user</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= title%></title>
+  </head>
+  <body>
+    <div class="messages-wrapper">
+      <h1><%= title%></h1>
+      <ul>
+        <% if (locals.users) {%> <% users.forEach(user => { %>
+        <li>
+          ID: <%= user.id %>, Name: <%= user.firstName%> <%= user.lastName%>
+        </li>
+        <% }) %> <% } %>
+      </ul>
+      <a href="/users/create" class="btn">Create new user</a>
+    </div>
+  </body>
 </html>

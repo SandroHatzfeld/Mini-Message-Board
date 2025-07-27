@@ -3,26 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title><%= title %></title>
   </head>
   <body>
-    <h1><%= title %></h1>
-		<%- include("partials/errors.ejs") %>
-    <form action="/users/create" method="POST">
-      <div class="justify-items-row">
-				<div>
-					<label for="firstName">First Name</label>
-					<input type="text" name="firstName" id="firstName" required />
-				</div>
-				<div>
-					<label for="lastName">Last Name</label>
-					<input type="text" name="lastName" id="lastName" required />
-				</div>
-      </div>
-      <div class="justify-items-row">
-        <a class="btn" href="/">Back to home</a>
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
+    <div class="messages-wrapper">
+      <h1><%= title %></h1>
+      <%- include("partials/errors.ejs") %>
+      <form action="/users/create" method="POST">
+        <div class="flex-row">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" required />
+        </div>
+        <div class="flex-row">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" required />
+        </div>
+        <div class="justify-items-row">
+          <a class="btn" href="/">Back to home</a>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>
