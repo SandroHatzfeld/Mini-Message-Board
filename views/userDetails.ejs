@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Details of <%= user.firstName%></title>
+  </head>
+  <body>
+    <div class="messages-wrapper">
+      <h1>User details</h1>
+      <p>First Name: <%= user.firstName %></p>
+      <p>Last Name: <%= user.lastName %></p>
+      <p>E-Mail: <%= user.eMail %></p>
+      <p>Birthday: <%= user.birthday %></p>
+      <p>Bio: <%= user.bio %></p>
+      
+      <a class="btn" href="/users">Go back</a>
+    </div>
+  </body>
+</html>

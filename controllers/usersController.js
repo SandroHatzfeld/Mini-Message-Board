@@ -20,6 +20,12 @@ exports.usersListGet = (req, res) => {
 		users: userStorage.getUsers()
 	})
 }
+exports.userListDetailsGet = (req, res) => {
+	res.render("userDetails", {
+		user: userStorage.getUser(req.params.id)
+	})
+}
+
 exports.usersCreateGet = (req, res) => {
 	res.render("createUser", {
 		title: "Create a new user"
@@ -49,6 +55,7 @@ exports.usersUpdateGet = (req, res) => {
 		user: user
 	})
 }
+
 exports.usersUpdatePost = [
 	validateUser,
 	(req, res) => {
