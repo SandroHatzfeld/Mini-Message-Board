@@ -11,20 +11,56 @@
       <h1><%= title %></h1>
       <%- include("partials/errors.ejs") %>
       <form action="/users/<%= user.id %>/update" method="POST">
-        <input
-          type="text"
-          name="firstName"
-          value="<%= user.firstName %>"
-          required
-        />
-        <input
-          type="text"
-          name="lastName"
-          value="<%= user.lastName %>"
-          required
-        />
-        <button type="submit">Update User</button>
-				<a class="btn" href="/users">Back to userlist</a>
+        <div class="justify-items-row">
+          <div>
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              required
+              value="<%= user.lastName %>"
+            />
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              required
+              value="<%= user.lastName %>"
+            />
+          </div>
+        </div>
+        <div class="justify-items-row">
+          <div>
+            <label for="eMail">E-Mail</label>
+            <input
+              type="email"
+              name="eMail"
+              id="eMail"
+              value="<%= user.eMail %>"
+            />
+          </div>
+          <div>
+            <label for="birthday">Birthday</label>
+            <input
+              type="date"
+              name="birthday"
+              id="birthday"
+              value="<%= user.birthday %>"
+            />
+          </div>
+        </div>
+        <div class="flex-row">
+          <label for="bio">Bio</label>
+          <textarea name="bio" id="bio"><%= user.bio %></textarea>
+        </div>
+        <div class="justify-items-row">
+          <a class="btn" href="/users">Back to userlist</a>
+          <button type="submit">Update User</button>
+        </div>
       </form>
     </div>
   </body>

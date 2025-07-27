@@ -11,17 +11,33 @@
       <h1><%= title %></h1>
       <%- include("partials/errors.ejs") %>
       <form action="/users/create" method="POST">
-        <div class="flex-row">
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" id="firstName" required />
-        </div>
-        <div class="flex-row">
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" id="lastName" required />
+        <div class="justify-items-row">
+          <div>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" required />
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" required />
+          </div>
         </div>
         <div class="justify-items-row">
-          <a class="btn" href="/">Back to home</a>
-          <button type="submit" >Submit</button>
+          <div>
+            <label for="eMail">E-Mail</label>
+            <input type="email" name="eMail" id="eMail" />
+          </div>
+          <div>
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday" />
+          </div>
+        </div>
+        <div class="flex-row">
+            <label for="bio">Bio</label>
+            <textarea name="bio" id="bio"></textarea>
+        </div>
+        <div class="justify-items-row">
+          <a class="btn" href="/">Back to users</a>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>

@@ -42,8 +42,8 @@ exports.usersCreatePost = [
 			})
 		}
 
-		const { firstName, lastName } = req.body
-		userStorage.addUser({ firstName, lastName })
+		const { firstName, lastName, eMail, birthday, bio } = req.body
+		userStorage.addUser({ firstName, lastName, eMail, birthday, bio })
 		res.redirect("/users")
 	}
 ]
@@ -69,8 +69,8 @@ exports.usersUpdatePost = [
 			})
 		}
 
-		const { firstName, lastName } = req.body
-		userStorage.updateUser(req.params.id, { firstName, lastName })
+		const { firstName, lastName, eMail, birthday, bio } = req.body
+		userStorage.updateUser(req.params.id, { firstName, lastName, eMail, birthday, bio })
 		res.redirect("/users")
 	}
 ]
