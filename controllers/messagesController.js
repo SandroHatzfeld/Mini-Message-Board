@@ -22,14 +22,10 @@ async function getAllMessages(req, res,) {
 	res.render("index", { messages: messages })
 }
 
-async function addNewMessage(req, res) {
-	const messages =	await db.getAllMessages()
 
-	res.render("form", { messages: messages })
-}
 async function pushNewMessage(req, res) {
 	db.pushNewMessage(req.body.message, req.body.username)
 	res.redirect("/")
 }
 
-module.exports = { getMessageById, getAllMessages, addNewMessage, pushNewMessage }
+module.exports = { getMessageById, getAllMessages, pushNewMessage }
