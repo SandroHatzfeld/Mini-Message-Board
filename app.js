@@ -7,6 +7,7 @@ const path = require('path')
 
 const messagesDetailsRouter = require('./routes/messageDetailsRouter.js')
 const indexRouter = require('./routes/indexRouter.js')
+const usersRouter = require('./routes/usersRouter.js')
 
 app.use(express.urlencoded({ extended: true }))
 app.set("views", path.join(__dirname, "views"))
@@ -17,6 +18,7 @@ app.use(express.static(__dirname + '/public'))
 // setup routers
 app.use("/", indexRouter)
 app.use("/messages", messagesDetailsRouter)
+app.use("/users", usersRouter)
 
 
 // load PORT from env and set fallback port

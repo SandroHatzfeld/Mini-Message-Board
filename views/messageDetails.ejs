@@ -1,15 +1,18 @@
-<html>
-	<head>
-		<title>Message by <%= message.user%></title>
-		<link rel="stylesheet" href="/css/style.css">
-	</head>
-	<body>
-		  <div class="messages-wrapper">
-		<h1>Message details</h1>
-		<p>Content: <%= message.text %></p>
-		<p>User: <%= message.user %></p>
-		<p>Date: <%= message.added.toLocaleString() %></p>
-		<a class="btn" href="/">Go back</a>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message by <%= message.user%></title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="messages-wrapper">
+      <h1>Message details</h1>
+      <p>Content: <%= message.text %></p>
+      <p>User: <%= message.user %></p>
+      <p>Date: <%= message.added.toLocaleString() %></p>
+      <a class="btn" href="/">Go back</a>
+    </div>
+  </body>
 </html>
