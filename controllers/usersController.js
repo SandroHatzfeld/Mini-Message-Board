@@ -93,4 +93,25 @@ exports.usersDeletePost = (req, res) => {
 	res.redirect("/users")
 }
 
+exports.usersSearchGet = (req, res) => {
+	const query = req.query.searchQuery
+	const userBase = userStorage.getUsers()
+
+	const searchResult = userBase.find(user => user.firstName === query || user.lastName === query || user.eMail === query)
+
+	console.log(searchResult);
+	
+	if (!searchResult) {
+		return res.status(404).render("listUsers", {
+			title: "Search User",
+			errors: ["No user was found"]
+		})
+	}
+
+	res.render("listUsers", {
+		title: "Search User",
+		users: userStorage.getUsers()
+	})
+}
+
 // module.exports = userController

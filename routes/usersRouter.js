@@ -9,4 +9,6 @@ usersRouter.get("/:id/details", userController.userListDetailsGet)
 usersRouter.get("/:id/update", userController.usersUpdateGet)
 usersRouter.post("/:id/update", userController.usersUpdatePost)
 usersRouter.post("/:id/delete", userController.usersDeletePost)
+usersRouter.get("/search", userController.usersSearchGet)
+
 module.exports = usersRouter
