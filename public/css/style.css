@@ -1,16 +1,19 @@
 :root {
 	--border-radius: 0.5rem;
+	
 }
 body {
 	padding: 0;
 	margin: 0;
 	height: 100vh;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	
 	background-color: #26252b;
 	color: white;
 }
 
-
+* {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 a, input[type="submit"], button {
 	color: inherit;
 }
@@ -81,4 +84,28 @@ input[type="submit"], button, .btn {
 	border: none;
 	background-color: #2759c6;
 	border-radius: var(--border-radius);
+
+	&:hover {
+		background-color: #1e3f84;
+	}
+}
+.btn.btn-danger {
+	background-color: #d71b1b;
+
+	&:hover {
+		background-color: #921515;
+	}
+}
+
+
+
+
+.user-list li {
+	margin-bottom: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+.user-list-buttons {
+	display: flex;
+	gap:0.25rem
 }
