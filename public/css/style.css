@@ -67,7 +67,7 @@ textarea {
 	resize: none;
 }
 
-input[type="text"], textarea {
+input[type="text"], input[type="email"], input[type="date"], textarea {
 	padding: 0.25rem;
 	font-size: 1rem;
 	border-radius: var(--border-radius);
